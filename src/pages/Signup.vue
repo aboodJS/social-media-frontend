@@ -8,7 +8,7 @@ import TopBar from '@/components/TopBar.vue';
 <template>
     <main class="h-screen grid text-white justify-center text-center">
         <TopBar></TopBar>
-        <h1>Sign up</h1>
+        <h1 class="font-bold text-4xl">Sign up</h1>
         <AuthForm path="http://localhost:3000/Signup"></AuthForm>
         <FooterBar></FooterBar>
     </main>
