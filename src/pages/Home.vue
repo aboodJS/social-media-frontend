@@ -16,7 +16,7 @@ import TopBar from '@/components/TopBar.vue';
     </section>
     <section class="h-[33vh] grid justify-center text-center content-evenly">
       <h1 class="text-3xl font-bold">join us today!</h1>
-      <div class="flex  items-center justify-center gap-3"><button class="w-30 font-bold hover:bg-[#3a3c9f] cursor-pointer transition p-3 rounded bg-[#4648b8]">Login</button><button class="w-30 font-bold hover:bg-[#3a3c9f] cursor-pointer transition p-3 rounded bg-[#4648b8]">Signup</button></div>
+      <div class="flex  items-center justify-center gap-3"><button class="w-30 font-bold hover:bg-[#3a3c9f] cursor-pointer transition p-3 rounded bg-[#4648b8] underline-0"><RouterLink to="/login">Login</RouterLink></button><button class="w-30 font-bold hover:bg-[#3a3c9f] cursor-pointer transition p-3 rounded bg-[#4648b8] underline-0"><RouterLink to="/signup">Signup</RouterLink></button></div>
     </section>
   </main>
   <FooterBar></FooterBar>
