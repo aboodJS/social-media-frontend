@@ -1,11 +1,25 @@
 <script setup>
-const props = defineProps(["path"])
+import { ref } from 'vue';
+
+const props = defineProps(["path", "function"])
+
+const name = ref("")
+const password = ref("")
+
+async function sendData(loginName, loginPassword) {
+    await fetch(props.path, {method: "POST", body:{name: loginName, password: loginPassword}}).then(j => j.json()).then(r => console.log(r))
+    console.log(loginName)
+    console.log(loginPassword)
+    
+}
 
 </script>
 
 <template>
-    <form :action="props.path" method="post" class="justify-self-center grid gap-3">
-        <div class="grid content-center gap-2.5"><label for="username">enter your username</label><input class=" rounded-lg outline-0 p-2 border-3 border-[#4649b8]" placeholder="username" type="text"></div>
-        <div class="grid content-center gap-2.5"><label for="password">enter a strong password</label><input class=" rounded-lg outline-0 p-2 border-3 border-[#4649b8]" placeholder="password" type="password"></div>
-    </form>
+    <div>
+        <input  v-model="name" class="rounded-lg outline-0 p-2 border-3 border-[#4649b8]" placeholder="username" type="text">
+        <input  v-model="password" class="rounded-lg outline-0 p-2 border-3 border-[#4649b8]" placeholder="password" type="password">
+        <button @click="() => sendData(name, password)">{{ props.function }}</button>
+    </div>
+    
 </template>
