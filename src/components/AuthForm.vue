@@ -7,11 +7,10 @@ const name = ref("")
 const password = ref("")
 
 async function sendData() {
-    const request = await fetch(props.path, {method: "POST",headers: {"Content-type": "application/json"}, body:JSON.stringify({name: name.value, password: password.value})})
-    const data = await request.json()
-    sessionStorage.setItem("token", data.token)
-    console.log(sessionStorage.getItem("token"))
-    
+        const request = await fetch(props.path, {method: "POST",headers: {"Content-type": "application/json"}, body:JSON.stringify({name: name.value, password: password.value})})
+        const data = await request.json()
+        sessionStorage.setItem("token", data.token)
+        location.reload()    
 }
 
 </script>
