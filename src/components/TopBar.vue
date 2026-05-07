@@ -5,7 +5,7 @@
 
     function logOut() {
         sessionStorage.removeItem("token")
-        location.reload()
+        location.replace("/")
     }
 </script>
 
