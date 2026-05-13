@@ -9,7 +9,7 @@ const errStat = ref(false)
 const errVal = ref()
 
 async function sendData() {
-   
+   await fetch(props.path, {method: "POST", body: JSON.stringify({username: name.value, password: password.value})})
 }
 
 </script>
